@@ -839,26 +839,26 @@ static int __init logger_init(void)
 	int ret;
 
 #if defined(CONFIG_SEC_DEBUG)
-	ret = create_log(LOGGER_LOG_MAIN, 2048*1024);
+	ret = create_log(LOGGER_LOG_MAIN, 1024*512);
 #else
-	ret = create_log(LOGGER_LOG_MAIN, 256*1024);
+	ret = create_log(LOGGER_LOG_MAIN, 128*512);
 #endif
 	if (unlikely(ret))
 		goto out;
 
-	ret = create_log(LOGGER_LOG_EVENTS, 256*1024);
+	ret = create_log(LOGGER_LOG_EVENTS, 128*512);
 	if (unlikely(ret))
 		goto out;
 
 #if defined(CONFIG_SEC_DEBUG)
-	ret = create_log(LOGGER_LOG_RADIO, 2048*1024);
+	ret = create_log(LOGGER_LOG_RADIO, 128*512);
 #else
-	ret = create_log(LOGGER_LOG_RADIO, 256*1024);
+	ret = create_log(LOGGER_LOG_RADIO, 128*512);
 #endif
 	if (unlikely(ret))
 		goto out;
 
-	ret = create_log(LOGGER_LOG_SYSTEM, 256*1024);
+	ret = create_log(LOGGER_LOG_SYSTEM, 128*512);
 	if (unlikely(ret))
 		goto out;
 
