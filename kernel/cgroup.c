@@ -2833,6 +2833,9 @@ static void cgroup_cfts_commit(struct cgroup_subsys *ss,
 	if (sb)
 		deactivate_super(sb);
 
+	if (sb)
+		deactivate_super(sb);
+
 	mutex_unlock(&cgroup_cft_mutex);
 }
 
