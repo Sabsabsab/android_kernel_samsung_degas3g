@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir -p boot/ramdisk
+bin/unpackbootimg -i boot.img -o boot/
+cd boot/ramdisk
+gunzip -c ../boot.img-ramdisk.gz | cpio -i
+cd ../..
+echo Done!

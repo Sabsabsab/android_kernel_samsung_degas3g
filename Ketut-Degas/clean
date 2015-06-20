@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -vfr *-new.img boot boot-new.img.tar.md5 recovery recovery-new.img.tar.md5 && ls
+echo Done!

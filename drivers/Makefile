@@ -160,3 +160,7 @@ obj-$(CONFIG_SENSORS)           += sensors/
 obj-$(CONFIG_MARVELL_DRIVERS)   += marvell/
 
 obj-$(CONFIG_IR_REMOCON_MC96)	+= irda/
+
+#ifeq (1, $(shell if [ -d $(srctree)/drivers/exfat ]; then echo 1; fi))
+#obj-$(CONFIG_SAMSUNG_EXFAT)    += exfat/
+#endif

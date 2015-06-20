@@ -195,7 +195,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 #ARCH          ?= $(SUBARCH)
 ARCH           ?= arm
 #CROSS_COMPILE ?= $(CONFIG_CROSS_COMPILE:"%"=%)
-CROSS_COMPILE  ?= /opt/toolchains/arm-eabi-4.7/bin/arm-eabi-
+CROSS_COMPILE  ?= ~/android_prebuilts_toolchains/arm-cortex_a9-linux-gnueabi-linaro-4.9/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)

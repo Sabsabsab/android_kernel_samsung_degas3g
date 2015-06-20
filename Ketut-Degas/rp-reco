@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -frv recovery-new.img.tar.md5
+cd recovery
+../bin/mkbootfs ramdisk | ../bin/minigzip > recovery.img-ramdisk-new.gz
+../bin/mkbootimg --kernel recovery.img-zImage --ramdisk recovery.img-ramdisk-new.gz --dt recovery.img-dt --signature recovery.img-signature -o ../recovery-new.img
+cd ../ && pwd
+echo Done!

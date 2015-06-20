@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -frv boot-new.img.tar.md5
+cd boot
+../bin/mkbootfs ramdisk | ../bin/minigzip > boot.img-ramdisk-new.gz
+../bin/mkbootimg --kernel boot.img-zImage --ramdisk boot.img-ramdisk-new.gz --dt boot.img-dt --signature boot.img-signature -o ../boot-new.img
+cd ../ && pwd
+echo Done!

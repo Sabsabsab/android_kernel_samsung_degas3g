@@ -1,0 +1,4 @@
+#!/bin/bash
+tar -vH ustar -c "$1" > "$1".tar
+md5sum -t "$1".tar >> "$1".tar
+mv -v "$1".tar "$1".tar.md5

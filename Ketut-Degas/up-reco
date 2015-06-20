@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir -p recovery/ramdisk
+bin/unpackbootimg -i recovery.img -o recovery/
+cd recovery/ramdisk
+gunzip -c ../recovery.img-ramdisk.gz | cpio -i
+cd ../..
+echo Done!
